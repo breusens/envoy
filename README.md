@@ -175,7 +175,7 @@ var opts = {
     router: router
 };
 
-var envoy = require('../envoy')(opts);
+var envoy = require('envoy')(opts);
 ```
 
 ## Debugging
