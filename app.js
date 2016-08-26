@@ -45,9 +45,13 @@ module.exports = function(opts) {
     app.use(morgan(app.opts.logFormat));
   }
 
-
   function main() {
     
+    // plug in custom routes
+    if (opts.router) {
+      app.use(opts.router);
+    }
+
     var production = (app.opts.production && app.opts.production === 'true');
     if (app.opts.static) {
       console.log('[OK]  Serving out directory: ' + app.opts.static);
