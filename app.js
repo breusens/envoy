@@ -48,8 +48,8 @@ module.exports = function(opts) {
   function main() {
     
     // plug in custom routes
-    if (opts.router) {
-      app.use(opts.router);
+    if (app.opts.router) {
+      app.use(app.opts.router);
     }
 
     var production = (app.opts.production && app.opts.production === 'true');
